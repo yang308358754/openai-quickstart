@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+        function translateText(language) {
+            const inputText = document.getElementById("inputText").value;
+            const outputText = document.getElementById("outputText");
+            $.ajax({
+                url: "/txttranslator",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ text: inputText,target_language: language }),
+                success: function(response) {
+                    outputText.value = response;
+                },
+                error: function(error) {
+                    console.error("Error:", error);
+                }
+            });
+        }
+
+        function translatePdf(language) {
+            const outputPDF = document.getElementById("outputPDF");
+            $.ajax({
+                url: "/pdftranslator",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({target_language: language }),
+                success: function(response) {
+                    outputPDF.value = response;
+                },
+                error: function(error) {
+                    console.error("Error:", error);
+                }
+            });
+        }
+    </script>
+  <h1>Translation Page</h1>
+    <p>Please enter the text you want to translate:</p>
+   <textarea id="inputText" rows="4" cols="50"></textarea>
+    </br>
+
+   <button onclick="translateText('chinese')">Translate chinese</button></br>
+    <button onclick="translateText('japanese')">Translate Japanese</button>
+    <p>Translated text:</p>
+   <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+
+    <p>PDF translate:</p>
+    <button onclick="translatePdf('chinese')">Translate chinese PDF</button></br>
+    <button onclick="translatePdf('japanese')">Translate japanese PDF</button></br>
+
+    <textarea id="outputPDF" rows="20" cols="50" readonly></textarea>
+</body>
+</html>
