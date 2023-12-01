@@ -32,10 +32,10 @@ OpenAI 翻译器目前还处于早期开发阶段，我正在积极地添加更�
 - [X] 通过 YAML 文件或命令行参数灵活配置。
 - [X] 对健壮的翻译操作进行超时和错误处理。
 - [X] 模块化和面向对象的设计，易于定制和扩展。
-- [ ] 实现图形用户界面 (GUI) 以便更易于使用。
+- [x] 实现图形用户界面 (GUI) 以便更易于使用。
 - [ ] 添加对多个 PDF 文件的批处理支持。
-- [ ] 创建一个网络服务或 API，以便在网络应用中使用。
-- [ ] 添加对其他语言和翻译方向的支持。
+- [x] 创建一个网络服务或 API，以便在网络应用中使用。
+- [x] 添加对其他语言和翻译方向的支持。
 - [ ] 添加对保留源 PDF 的原始布局和格式的支持。
 - [ ] 通过使用自定义训练的翻译模型来提高翻译质量。
 
@@ -44,7 +44,7 @@ OpenAI 翻译器目前还处于早期开发阶段，我正在积极地添加更�
 
 ### 环境准备
 
-1.克隆仓库 `git clone git@github.com:DjangoPeng/openai-translator.git`。
+1.克隆仓库 `git clone git@github.com:yang308358754/openai-quickstart.git`。
 
 2.OpenAI-翻译器 需要 Python 3.6 或更高版本。使用 `pip install -r requirements.txt` 安装依赖项。
 
@@ -75,33 +75,17 @@ common:
 然后命令行直接运行：
 
 ```bash
-python ai_translator/main.py
+python ai_translator/main.py 启动web服务，在浏览器输入http://127.0.0.1:2020/translator 访问页面
+
+功能：
+1、通过输入英文，点[Translate chinese]翻译成中文
+2、通过输入英文，点[Translate japanese]翻译成日文
+3、PDF转换为英文，点[Translate chinese PDF]
+4、PDF转换为日文，点[Translate japanese PDF]
+
 ```
 
-![sample_out](images/sample_image_1.png)
-
-#### 使用命令行参数
-
-您也可以直接在命令行上指定设置。这是使用 OpenAI 模型的例子：
-
-```bash
-# 将您的 api_key 设置为环境变量
-export OPENAI_API_KEY="sk-xxx"
-python ai_translator/main.py --model_type OpenAIModel --openai_api_key $OPENAI_API_KEY --file_format markdown --book tests/test.pdf --openai_model gpt-3.5-turbo
-```
-
-这是使用 GLM 模型的例子：
-
-```bash
-# 将您的 GLM 模型 URL 设置为环境变量
-export GLM_MODEL_URL="http://xxx:xx"
-python ai_translator/main.py --model_type GLMModel --glm_model_url $GLM_MODEL_URL --book tests/test.pdf 
-```
-
-## 许可证
-
-该项目采用 GPL-3.0 许可证。有关详细信息，请查看 [LICENSE](LICENSE) 文件。
-
+![image-20231201183420312](C:\Users\travelyang\AppData\Roaming\Typora\typora-user-images\image-20231201183420312.png)
 
 
 
