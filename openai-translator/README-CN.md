@@ -85,7 +85,8 @@ python ai_translator/main.py 启动web服务，在浏览器输入http://127.0.0.
 
 ```
 
-![image](https://github.com/yang308358754/openai-quickstart/assets/152604728/cbd28e0b-5b1d-409a-ba00-ac3349876f71)
+![image](https://github.com/yang308358754/openai-quickstart/assets/152604728/13e747a2-3ac2-4b33-9d3f-84f5e7c86f88)
+
 
 
 
