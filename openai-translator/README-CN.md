@@ -85,7 +85,8 @@ python ai_translator/main.py 启动web服务，在浏览器输入http://127.0.0.
 
 ```
 
-![image-20231201183420312](C:\Users\travelyang\AppData\Roaming\Typora\typora-user-images\image-20231201183420312.png)
+![image](https://github.com/yang308358754/openai-quickstart/assets/152604728/cbd28e0b-5b1d-409a-ba00-ac3349876f71)
+
 
 
 
